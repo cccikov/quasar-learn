@@ -1,0 +1,10 @@
+{
+  "android": {
+    "release": {
+      "keystore": "release-key.keystore",
+      "alias": "cordova-demo",
+      "storePassword": "testccc",
+      "password": "testccc"
+    }
+  }
+}
