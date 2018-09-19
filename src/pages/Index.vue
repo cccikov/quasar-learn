@@ -63,6 +63,8 @@
 	        },
 	        // 获取相机权限
 	        getCamera() {
+				debugger;
+
 	            var _this = this;
 
 	            _this.info("获取权限");
