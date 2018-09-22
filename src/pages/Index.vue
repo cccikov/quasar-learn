@@ -63,7 +63,7 @@
 	        },
 	        // 获取相机权限
 	        getCamera() {
-				debugger;
+	            debugger;
 
 	            var _this = this;
 
@@ -86,7 +86,7 @@
 	            }
 	        },
 	        getPermission() {
-				var _this = this;
+	            var _this = this;
 
 	            _this.info("获取权限");
 
@@ -102,8 +102,8 @@
 	                            permission,
 	                            function(results) {
 	                                if (result[permission]) {
-										// permission is granted
-										_this.info("获取成功")
+	                                    // permission is granted
+	                                    _this.info("获取成功");
 	                                }
 	                            },
 	                            alert
