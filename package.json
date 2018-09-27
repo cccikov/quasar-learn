@@ -1,6 +1,6 @@
 {
   "name": "quasar_test",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "description": "A Quasar Framework app",
   "productName": "小聪慧测试",
   "cordovaId": "org.cordova.quasar.app",
