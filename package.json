@@ -1,8 +1,8 @@
 {
   "name": "quasar_test",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "productName": "小聪慧测试",
   "cordovaId": "org.cordova.quasar.app",
   "author": "ccc <522978139@qq.com>",
   "private": true,
