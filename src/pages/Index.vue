@@ -1,8 +1,12 @@
 <template>
   <q-page class="index-wrap">
-    <p>打开相机: <input type="file" accept="image/*" capture="camera"></p>
-    <p>打开录音: <input type="file" accept="audio/*" capture="microphone"></p>
-    <p>打开录像: <input type="file" accept="video/*" capture="camcorder"></p>
+    <div id="wrap">
+      <video></video>
+    </div>
+    <p>打开文件: <input type="file"></p >
+    <p>打开相机: <input type="file" accept="image/*" capture="camera"></p >
+    <p>打开录音: <input type="file" accept="audio/*" capture="microphone"></p >
+    <p>打开录像: <input type="file" accept="video/*" capture="camcorder"></p >
     <img v-if="imageSrc" :src="imageSrc">
     <div class="btn-wrap">
       <q-btn @click="checkCamera" label="判断权限" />
@@ -22,6 +26,10 @@
     <div class="btn-wrap">
       <q-btn @click="requestAllPermission()" label="获取多个权限" />
     </div>
+    <div class="btn-wrap">
+      <q-btn @click="scanner" label="扫描二维码" />
+      <q-btn @click="openMediaDevices" label="openMediaDevices" />
+    </div>
     <router-link to="/tabs"> tabs </router-link>
   </q-page>
 </template>
@@ -32,6 +40,9 @@
   // justify-content: center;
   align-items: center;
   height: 120px;
+  &>*{
+    flex-shrink: 0;
+  }
 }
 
 .btn-wrap {
@@ -56,6 +67,18 @@ img {
   max-width: 100px;
 }
 
+#wrap {
+  width: 320px;
+  height: 240px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+#wrap video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 </style>
 <script>
 export default {
@@ -66,6 +89,7 @@ export default {
     };
   },
   methods: {
+    scanner() {},
     // 获取多个权限
     requestAllPermission() {
       var _this = this;
@@ -187,7 +211,8 @@ export default {
         },
         () => {
           // 如果失败
-        }, {
+        },
+        {
           // 相机选项
           destinationType: Camera.DestinationType.DATA_URL
         }
@@ -202,11 +227,41 @@ export default {
         // color:"ccc",//实际就是添加一个 bg-* 的className
         type: "info"
       });
+    },
+    openMediaDevices() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert("设备不支持navigator.mediaDevices.getUserMedia");
+      }
+
+      let option = {
+        video: {
+          facingMode: { exact: "environment" }
+        } //调用前置摄像头 { 'facingMode': "user" }，后置摄像头使用video: { facingMode: { exact: "environment" } }
+      };
+
+      // ！！！ 注意，仅能在https环境下打开
+      navigator.mediaDevices
+        .getUserMedia(option)
+        .then(function(stream) {
+          var video = document.querySelector("video");
+          if ("srcObject" in video) {
+            video.srcObject = stream;
+          } else {
+            video.src =
+              (window.URL && window.URL.createObjectURL(stream)) || stream;
+          }
+          video.play();
+        })
+        .catch(function(err) {
+          console.error(err);
+          alert(err);
+        });
     }
   },
   mounted: function() {
-    this.$nextTick(function() {});
+    this.$nextTick(function() {
+      alert(location.protocol);
+    });
   }
 };
-
 </script>
