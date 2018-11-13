@@ -1,5 +1,8 @@
 <template>
     <q-page class="index-wrap">
+        <p><router-link to="/tabs"> tab123s </router-link></p>
+        <p><router-link to="/dom"> dom </router-link></p>
+        <p><router-link :to="{path:'/dom',query:{name:'ccc',age:'18'}}"> {path:'/dom',query:{name:'ccc',age:'18'} </router-link></p>
         <div id="wrap">
             <video></video>
         </div>
@@ -30,7 +33,6 @@
             <q-btn @click="scanner" label="扫描二维码" />
             <q-btn @click="openMediaDevices" label="openMediaDevices" />
         </div>
-        <router-link to="/tabs"> tabs </router-link>
     </q-page>
 </template>
 <style lang="less">
@@ -85,7 +87,7 @@
         name: "PageIndex",
         data: function() {
             return {
-                imageSrc: ""
+                imageSrc: "",
             };
         },
         methods: {
@@ -265,7 +267,6 @@
         },
         mounted: function() {
             this.$nextTick(function() {
-                alert(location.protocol);
             });
         }
     };
