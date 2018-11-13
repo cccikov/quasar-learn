@@ -3,6 +3,7 @@
         <p><router-link to="/tabs"> tabs </router-link></p>
         <p><router-link to="/dom"> dom </router-link></p>
         <p><router-link :to="{path:'/dom',query:{name:'ccc',age:'18'}}"> {path:'/dom',query:{name:'ccc',age:'18'} </router-link></p>
+        <p><a href="https://www.baidu.com">外部百度链接</a></p>
         <div id="wrap">
             <video></video>
         </div>
