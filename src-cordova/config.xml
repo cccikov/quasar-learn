@@ -33,7 +33,6 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-permission" spec="^0.1.0" />
-    <engine name="android" spec="^7.0.0" />
-    <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-qrscanner" spec="^2.6.0" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
