@@ -32,6 +32,6 @@
     </platform>
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-permission" spec="^0.1.0" />
-    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <engine name="android" spec="^7.0.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 </widget>
