@@ -22,8 +22,7 @@
             "cordova-plugin-whitelist": {},
             "cordova-plugin-android-permissions": {},
             "cordova-plugin-permission": {},
-            "cordova-plugin-camera": {},
-            "cordova-plugin-qrscanner": {}
+            "cordova-plugin-camera": {}
         },
         "platforms": [
             "android"

@@ -1,8 +1,8 @@
 <template>
     <q-page class="index-wrap">
         <p><router-link to="/tabs"> tabs </router-link></p>
-        <p><router-link to="/dom"> dom </router-link></p>
-        <p><router-link :to="{path:'/dom',query:{name:'ccc',age:'18'}}"> {path:'/dom',query:{name:'ccc',age:'18'} </router-link></p>
+        <p><router-link to="/console"> console </router-link></p>
+        <p><router-link :to="{path:'/console',query:{name:'ccc',age:'18'}}"> {path:'/console',query:{name:'ccc',age:'18'} </router-link></p>
         <p><a href="https://www.baidu.com">外部百度链接</a></p>
         <div id="wrap">
             <video></video>
@@ -237,6 +237,7 @@
                     !navigator.mediaDevices.getUserMedia
                 ) {
                     alert("设备不支持navigator.mediaDevices.getUserMedia");
+                    return;
                 }
 
                 let option = {
