@@ -241,6 +241,10 @@
                     return;
                 }
 
+                if (!navigator.getUserMedia) {
+                    alert("设备不支持navigator.getUserMedia")
+                }
+
                 let option = {
                     video: {
                         facingMode: { exact: "environment" }
