@@ -16,7 +16,7 @@
             <p>navigator.userAgent => {{navigator.userAgent}}</p>
             <p>navigator => {{navigator}}</p>
             <p>navigator.mediaDevices => {{!!navigator.mediaDevices}}</p>
-            <p>navigator.mediaDevices.getUserMedia => {{!!navigator.mediaDevices.getUserMedia}}</p>
+            <p>navigator.mediaDevices.getUserMedia => {{!!navigator.mediaDevices && !!navigator.mediaDevices.getUserMedia}}</p>
             <p>navigator.getUserMedia => {{!!navigator.getUserMedia}}</p>
         </div>
     </q-page>
