@@ -7,6 +7,7 @@ const routes = [
             { path: '', component: () => import('pages/Index.vue') },
 			{ path: '/tabs', component: () => import('pages/tabs.vue') },
 			{ path: '/console', component: () => import('pages/console.vue') },
+			{ path: '/web', component: () => import('pages/web.vue') },
 		]
 	}
 ]
