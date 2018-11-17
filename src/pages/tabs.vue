@@ -10,7 +10,7 @@
       <q-tab-pane name="test-2"> 选项卡2 </q-tab-pane>
       <q-tab-pane name="test-3"> 选项卡3 </q-tab-pane>
     </q-tabs>
-    <q-tabs>
+    <q-tabs color="pink-2" text-color="primary">
       <!-- 选项卡 - 注意slot="title" -->
       <q-tab default count="5" slot="title" name="tab-1" icon="message" />
       <q-tab disable slot="title" name="tab-2" icon="fingerprint" />
