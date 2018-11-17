@@ -8,6 +8,7 @@ const routes = [
 			{ path: '/tabs', component: () => import('pages/tabs.vue') },
 			{ path: '/console', component: () => import('pages/console.vue') },
 			{ path: '/web', component: () => import('pages/web.vue') },
+			{ path: '/scroll', component: () => import('layouts/scroll.vue') }
 		]
 	}
 ]
