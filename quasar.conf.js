@@ -61,10 +61,14 @@ module.exports = function (ctx) {
                 "QInfiniteScroll",
                 'QSpinner',
                 'QSpinnerDots',
-                'QSpinnerAudio'
+                'QSpinnerAudio',
+                'QScrollArea',
+                'QModal',
+                'QModalLayout'
             ],
             directives: [
-                'Ripple'
+                'Ripple',
+                'CloseOverlay'
             ],
             // Quasar plugins
             plugins: [
