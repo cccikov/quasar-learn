@@ -37,7 +37,7 @@
             <div class="section">
                 <!-- 根据页面的滚动条的加载更多 -->
                 <q-btn label="切换tab/重置" @click="change"/>
-                <q-infinite-scroll ref="scrollList" :handler="resfresher">
+                <q-infinite-scroll ref="scrollList" :handler="resfresher" :offset="10">
                     <!-- 内容, 在本例中是一些<p>标签 -->
                     <p v-for="item in items" class="caption">Lorem ipsum dolor sit amet({{item}})...</p>
 
@@ -46,7 +46,9 @@
                     </div>
                 </q-infinite-scroll>
             </div>
-            <!-- 怎么判断需要.scroll的呢，因为q-scroll-area和q-modal-layout都可以用，都带有.scroll -->
+            <!-- 怎么判断需要.scroll的呢，因为q-scroll-area和q-modal-layout-content都可以用，都带有.scroll -->
+            <!-- 有些时候虽然不带.scorll都可以但是会出现异常行为，比如加载不全 -->
+
 
             <q-modal position="bottom" v-model="scrollModal">
                 <q-modal-layout>
@@ -64,19 +66,20 @@
 
                     <div class="section">
                         <!-- modal 滚动区域 -->
-                        <q-scroll-area style="height:300px">
-                            <q-infinite-scroll ref='modalScroll' :handler="resfresher4">
-                                <ul>
-                                    <li v-for="item in qModalList">qModalList {{item}}</li>
-                                </ul>
-                                <div class="text-center" slot="message">
-                                    <q-spinner-dots :size="40"></q-spinner-dots>
-                                </div>
-                            </q-infinite-scroll>
-                        </q-scroll-area>
+                        <q-infinite-scroll ref="modalScroll" :handler="resfresher4">
+                            <ul>
+                                <li v-for="item in qModalList">qModalList {{item}}</li>
+                            </ul>
+                            <div class="text-center" slot="message">
+                                <q-spinner-dots :size="40"></q-spinner-dots>
+                            </div>
+                        </q-infinite-scroll>
                     </div>
                 </q-modal-layout>
             </q-modal>
+
+
+
         </q-page-container>
     </q-layout>
 </template>
@@ -90,7 +93,7 @@
                     list.push(Math.random());
                 }
                 resolve(list);
-            }, 2000);
+            }, 1000);
         });
     }
 
@@ -159,7 +162,7 @@
         },
         watch: {
             scrollModal(val) {
-                if(val){
+                if (val) {
                     this.$refs.modalScroll.poll();
                 }
             }
