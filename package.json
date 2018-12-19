@@ -12,7 +12,9 @@
     "android": "quasar build -m cordova -T android",
     "dev": "quasar dev -m cordova -T android"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.18.2",
