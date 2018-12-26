@@ -17,6 +17,10 @@ const routes = [{
                 path: '/web',
                 component: () => import('pages/web.vue')
             },
+            {
+                path: '/qrcode',
+                component: () => import('pages/qrcode.vue')
+            },
         ]
     },
     {
