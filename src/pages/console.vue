@@ -4,6 +4,7 @@
         <div>
             <h5>document.location</h5>
             <p>location => {{location}}</p>
+            <textarea :value="JSON.stringify(location)" cols="30" rows="10"></textarea>
         </div>
         <div>
             <h5>$route</h5>
@@ -32,6 +33,7 @@
         },
         created(){
             console.log(this.$route)
+
         }
     };
 </script>

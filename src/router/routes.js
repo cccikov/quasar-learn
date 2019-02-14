@@ -21,6 +21,10 @@ const routes = [{
                 path: '/qrcode',
                 component: () => import('pages/qrcode.vue')
             },
+            {
+                path: '/ajax',
+                component: () => import('pages/ajax.vue')
+            },
         ]
     },
     {
