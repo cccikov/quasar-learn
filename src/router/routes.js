@@ -21,6 +21,7 @@ const routes = [{
                 path: '/qrcode',
                 component: () => import('pages/qrcode.vue')
             },
+
             {
                 path: '/ajax',
                 component: () => import('pages/ajax.vue')
@@ -30,6 +31,10 @@ const routes = [{
     {
         path: '/scroll',
         component: () => import('layouts/scroll.vue')
+    },
+    {
+        path: '/qrcode1',
+        component: () => import('pages/qrcode1.vue')
     }
 ]
 

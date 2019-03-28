@@ -2,6 +2,7 @@
     <q-page class="index-wrap">
         <p><router-link to="/ajax"> ajax </router-link></p>
         <p><router-link to="/qrcode"> qrcode 扫描二维码 </router-link></p>
+        <p><router-link to="/qrcode1"> 直接扫码 {{qrcode}}</router-link></p>
         <p><router-link to="/tabs"> tabs </router-link></p>
         <p><router-link to="/scroll"> scroll </router-link></p>
         <p><router-link to="/web"> web </router-link></p>

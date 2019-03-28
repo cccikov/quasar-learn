@@ -17,6 +17,7 @@ const store = new Vuex.Store({
             cityLabel:'全国'
         }, // 选择的城市
         showDev: true, // 是否显示开发中的模块
+        qrcode:""
     },
     getters: {
         // 是否企业
@@ -55,6 +56,9 @@ const store = new Vuex.Store({
         // 改变显示开发中的模块
         changeShowDev(state){
             state.showDev = true;
+        },
+        changeQrcode(state, val){
+            state.qrcode = val.qrcode;
         }
     }
 });
