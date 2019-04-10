@@ -16,6 +16,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="bdapp:*" />
+    <allow-intent href="baidumap:*" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="./res/icon/android/ccc.png" />
