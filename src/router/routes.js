@@ -34,6 +34,10 @@ const routes = [{
         component: () => import('../pages/cordova-plugin-camera-preview.vue')
     },
     {
+        path: '/camera',
+        component: () => import('../layouts/camera.vue')
+    },
+    {
         path: '/scroll',
         component: () => import('layouts/scroll.vue')
     },
