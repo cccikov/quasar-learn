@@ -21,14 +21,6 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="./img/ccc.png" />
-        <config-file parent="/*" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.CAMERA" />
-            <uses-permission android:name="android.permission.RECORD_AUDIO" />
-            <uses-permission android:name="android.permission.BATTERY_STATS" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        </config-file>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
