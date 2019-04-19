@@ -26,7 +26,12 @@ const routes = [{
                 path: '/ajax',
                 component: () => import('pages/ajax.vue')
             },
+
         ]
+    },
+    {
+        path: '/cordova-plugin-camera-preview',
+        component: () => import('../pages/cordova-plugin-camera-preview.vue')
     },
     {
         path: '/scroll',

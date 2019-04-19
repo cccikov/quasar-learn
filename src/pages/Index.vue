@@ -1,43 +1,76 @@
 <template>
     <q-page class="index-wrap">
-        <p><router-link to="/ajax"> ajax </router-link></p>
-        <p><router-link to="/qrcode"> qrcode 扫描二维码 </router-link></p>
-        <p><router-link to="/qrcode1"> 直接扫码 {{qrcode}}</router-link></p>
-        <p><router-link to="/tabs"> tabs </router-link></p>
-        <p><router-link to="/scroll"> scroll </router-link></p>
-        <p><router-link to="/web"> web </router-link></p>
-        <p><router-link to="/console"> console </router-link></p>
-        <p><router-link :to="{path:'/console',query:{name:'ccc',age:'18'}}"> {path:'/console',query:{name:'ccc',age:'18'} </router-link></p>
-        <p><a href="https://www.baidu.com">外部百度链接</a></p>
+        <p>
+            <router-link to="/ajax">ajax</router-link>
+        </p>
+        <p>
+            <router-link to="/qrcode">qrcode 扫描二维码</router-link>
+        </p>
+        <p>
+            <router-link to="/qrcode1">直接扫码 {{qrcode}}</router-link>
+        </p>
+        <p>
+            <router-link to="/tabs">tabs</router-link>
+        </p>
+        <p>
+            <router-link to="/scroll">scroll</router-link>
+        </p>
+        <p>
+            <router-link to="/web">web</router-link>
+        </p>
+        <p>
+            <router-link to="/console">console</router-link>
+        </p>
+        <p>
+            <router-link to="/cordova-plugin-camera-preview">cordova-plugin-camera-preview.vue</router-link>
+        </p>
+        <p>
+            <router-link :to="{path:'/console',query:{name:'ccc',age:'18'}}">{path:'/console',query:{name:'ccc',age:'18'}</router-link>
+        </p>
+        <p>
+            <a href="https://www.baidu.com">外部百度链接</a>
+        </p>
         <div id="wrap">
             <video></video>
         </div>
-        <p>打开文件: <input type="file"></p>
-        <p>打开相机: <input type="file" accept="image/*" capture="camera"></p>
-        <p>打开录音: <input type="file" accept="audio/*" capture="microphone"></p>
-        <p>打开录像: <input type="file" accept="video/*" capture="camcorder"></p>
+        <p>
+            打开文件:
+            <input type="file">
+        </p>
+        <p>
+            打开相机:
+            <input type="file" accept="image/*" capture="camera">
+        </p>
+        <p>
+            打开录音:
+            <input type="file" accept="audio/*" capture="microphone">
+        </p>
+        <p>
+            打开录像:
+            <input type="file" accept="video/*" capture="camcorder">
+        </p>
         <img v-if="imageSrc" :src="imageSrc">
         <div class="btn-wrap">
-            <q-btn @click="checkCamera" label="判断权限" />
-            <q-btn @click="getCamera" label="获取权限" />
-            <q-btn @click="getPermission" label="获取权限2" />
-            <q-btn @click="captureImage" label="打开相机？" />
+            <q-btn @click="checkCamera" label="判断权限"/>
+            <q-btn @click="getCamera" label="获取权限"/>
+            <q-btn @click="getPermission" label="获取权限2"/>
+            <q-btn @click="captureImage" label="打开相机？"/>
         </div>
         <div class="btn-wrap">
-            <q-btn @click="requestPermission('CAMERA')" label="CAMERA" />
-            <q-btn @click="requestPermission('RECORD_AUDIO')" label="RECORD_AUDIO" />
-            <q-btn @click="requestPermission('BATTERY_STATS')" label="BATTERY_STATS" />
-            <q-btn @click="requestPermission('INTERNET')" label="INTERNET" />
-            <q-btn @click="requestPermission('WRITE_EXTERNAL_STORAGE')" label="WRITE_EXTERNAL_STORAGE" />
-            <q-btn @click="requestPermission('READ_EXTERNAL_STORAGE')" label="READ_EXTERNAL_STORAGE" />
-            <q-btn @click="requestPermission('ACCESS_NETWORK_STATE')" label="ACCESS_NETWORK_STATE" />
+            <q-btn @click="requestPermission('CAMERA')" label="CAMERA"/>
+            <q-btn @click="requestPermission('RECORD_AUDIO')" label="RECORD_AUDIO"/>
+            <q-btn @click="requestPermission('BATTERY_STATS')" label="BATTERY_STATS"/>
+            <q-btn @click="requestPermission('INTERNET')" label="INTERNET"/>
+            <q-btn @click="requestPermission('WRITE_EXTERNAL_STORAGE')" label="WRITE_EXTERNAL_STORAGE"/>
+            <q-btn @click="requestPermission('READ_EXTERNAL_STORAGE')" label="READ_EXTERNAL_STORAGE"/>
+            <q-btn @click="requestPermission('ACCESS_NETWORK_STATE')" label="ACCESS_NETWORK_STATE"/>
         </div>
         <div class="btn-wrap">
-            <q-btn @click="requestAllPermission()" label="获取多个权限" />
+            <q-btn @click="requestAllPermission()" label="获取多个权限"/>
         </div>
         <div class="btn-wrap">
-            <q-btn @click="scanner" label="扫描二维码" />
-            <q-btn @click="openMediaDevices" label="openMediaDevices" />
+            <q-btn @click="scanner" label="扫描二维码"/>
+            <q-btn @click="openMediaDevices" label="openMediaDevices"/>
         </div>
     </q-page>
 </template>
@@ -93,7 +126,7 @@
         name: "PageIndex",
         data: function() {
             return {
-                imageSrc: "",
+                imageSrc: ""
             };
         },
         methods: {
@@ -105,14 +138,7 @@
                 // cordova-plugin-android-permissions
                 let permissions = cordova.plugins.permissions;
                 permissions.requestPermissions(
-                    [
-                        permissions.CAMERA,
-                        permissions.RECORD_AUDIO,
-                        permissions.INTERNET,
-                        permissions.WRITE_EXTERNAL_STORAGE,
-                        permissions.READ_EXTERNAL_STORAGE,
-                        permissions.ACCESS_NETWORK_STATE
-                    ],
+                    [permissions.CAMERA, permissions.RECORD_AUDIO, permissions.INTERNET, permissions.WRITE_EXTERNAL_STORAGE, permissions.READ_EXTERNAL_STORAGE, permissions.ACCESS_NETWORK_STATE],
                     function(status) {
                         if (!status.hasPermission) {
                             _this.info("获取失败");
@@ -237,16 +263,13 @@
                 });
             },
             openMediaDevices() {
-                if (
-                    !navigator.mediaDevices ||
-                    !navigator.mediaDevices.getUserMedia
-                ) {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
                     alert("设备不支持navigator.mediaDevices.getUserMedia");
                     return;
                 }
 
                 if (!navigator.getUserMedia) {
-                    alert("设备不支持navigator.getUserMedia")
+                    alert("设备不支持navigator.getUserMedia");
                 }
 
                 let option = {
@@ -263,10 +286,7 @@
                         if ("srcObject" in video) {
                             video.srcObject = stream;
                         } else {
-                            video.src =
-                                (window.URL &&
-                                    window.URL.createObjectURL(stream)) ||
-                                stream;
+                            video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
                         }
                         video.play();
                     })
@@ -277,8 +297,7 @@
             }
         },
         mounted: function() {
-            this.$nextTick(function() {
-            });
+            this.$nextTick(function() {});
         }
     };
 </script>
