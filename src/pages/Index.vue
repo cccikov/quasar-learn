@@ -25,6 +25,9 @@
             <router-link to="/console">console</router-link>
         </p>
         <p>
+            <router-link to="/permission">/permission</router-link>
+        </p>
+        <p>
             <router-link to="/cordova-plugin-camera-preview">cordova-plugin-camera-preview.vue</router-link>
         </p>
         <p>

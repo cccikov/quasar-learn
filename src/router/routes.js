@@ -38,6 +38,10 @@ const routes = [{
         component: () => import('../layouts/camera.vue')
     },
     {
+        path: '/permission',
+        component: () => import('../layouts/permission.vue')
+    },
+    {
         path: '/scroll',
         component: () => import('layouts/scroll.vue')
     },
